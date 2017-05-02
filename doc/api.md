@@ -5,13 +5,7 @@ GET /message/list
 
 ## 请求示例
 
-localhost:8080/message/list
-
-|参数名|类型|参数说明|
-| ------------- |:-------------:| :-----|
-|id|int|留言 ID|
-|message|String|留言内容|
-
+http://139.224.14.39:8888/message/list
 
 ## 返回示例
 ```
@@ -31,7 +25,7 @@ localhost:8080/message/list
 }
 ```
 
-# 2. 留言详情
+# ~~【废弃】2. 留言详情~~
 GET /message/{id}
 
 ## 请求示例
@@ -59,25 +53,45 @@ POST /message
  
 ## 请求示例
 
-localhost:8080/message
+http://139.224.14.39:8888/message
 
 |参数名|类型|参数说明|
 | ------------- |:-------------:| :-----|
-|email|String|邮箱|
-|message|String|留言内容|
+|replyEmail|String|邮箱|
+|content|String|留言内容|
 
 ```
 {
-    "email":"bysocket@aliyun.com",
-    "message":"我的人生几经大起大落..."
+    "replyEmail":"bysocket@aliyun.com",
+    "content":"我的人生几经大起大落..."
 }
 ```
 
 ## 返回示例
 ```
-"code": "200",
-"message": "success",
-"result": {
-     "id":2,
+12
+```
+
+# 4. 要答案
+POST /reply
+ 
+## 请求示例
+
+http://139.224.14.39:8888/reply
+
+|参数名|类型|参数说明|
+| ------------- |:-------------:| :-----|
+|replyEmail|String|邮箱|
+|id|int|留言 ID|
+
+```
+{
+    "replyEmail":"bysocket@aliyun.com",
+    "messageId":12
 }
+```
+
+## 返回示例
+```
+1
 ```

@@ -1,0 +1,18 @@
+package org.bop.treehole.dao;
+
+
+import org.bop.treehole.domain.Message;
+
+import java.util.List;
+
+/**
+ * 留言 DAO 接口类
+ *
+ * Created by bysocket on 02/05/2017.
+ */
+public interface MessageDao {
+
+    List<Message> findAllMessage();
+
+    Long saveMessage(Message message);
+}
