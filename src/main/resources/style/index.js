@@ -169,7 +169,7 @@ function bizListener(){
         t && clearInterval(t) && (t = null);
         var scrollUnit = document.body.scrollTop / 80;
         t = setInterval(function(){
-            if (document.body.scrollTop - scrollUnit < 0){
+            if (document.body.scrollTop - scrollUnit <= 0){
                 document.body.scrollTop = 0;
                 clearInterval(t);
                 t = null;
