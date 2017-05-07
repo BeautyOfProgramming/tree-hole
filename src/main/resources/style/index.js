@@ -113,12 +113,13 @@ var biz = {
             lists.insertBefore(c.childNodes[0], lists.childNodes[0]);
             formDom.value = '';
             emailDom.value = '';
+            cb && cb();
             alert('提交咨询成功');
-            cb();
         });
     },
-    submitReply: function(id, email){
+    submitReply: function(id, email, cb){
         server.replyMessage(id, email, function(){
+            cb && cb();
             alert('提交愿望成功');
         });
     }
@@ -154,7 +155,9 @@ function bizListener(){
             if (email.trim() == ""){
                 return alert('请输入联系邮箱');
             }
-            biz.submitReply(id, email);
+            biz.submitReply(id, email, function(){
+                e.target.parentNode.childNodes[0].value = "";
+            });
         }
     });
 
