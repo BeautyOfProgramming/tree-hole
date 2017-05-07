@@ -93,10 +93,10 @@ var biz = {
         var emailDom = document.querySelector('.ask-form-email');
         var formData = formDom.value;
         var emailData = emailDom.value;
-        if (formData == ""){
+        if (formData.trim() == ""){
             return alert('请输入咨询的内容');
         }
-        if (emailData == ""){
+        if (emailData.trim() == ""){
             return alert('请输入联系邮箱');
         }
         server.postMessage(formData, emailData, function(res){
@@ -151,6 +151,9 @@ function bizListener(){
         if (e.target.className == 'article-item-ask'){
             var id = e.target.getAttribute('data-id');
             var email = e.target.parentNode.childNodes[0].value;
+            if (email.trim() == ""){
+                return alert('请输入联系邮箱');
+            }
             biz.submitReply(id, email);
         }
     });
