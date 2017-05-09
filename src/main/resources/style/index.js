@@ -84,9 +84,27 @@ var utils = {
 
 var biz = {
     allItemNoPlusPlus: function(){
-        document.querySelectorAll('.article-item-no').forEach(function(dItem){
-            dItem.innerText = parseInt(dItem.innerText) + 1;
-        })
+        if (document.querySelectorAll){
+            var nodelists = document.querySelectorAll('.article-item-no');
+            for (var i = 0,len = nodelists.length; i < len; i++){
+                nodelists[i].innerText = parseInt(nodelists[i].innerText) + 1;
+            }
+        } else if (document.getElementsByClassName){
+            document.document.getElementsByClassName('.article-item-no').forEach(function(dItem){
+                dItem.innerText = parseInt(dItem.innerText) + 1;
+            });
+        } else {
+            var tags=document.getElementsByTagName('div');
+            var tagArr = [];
+            for (var i = 0, len = tags.length; i < len; i++){
+                if (tags[i].className.indexOf('.article-item-no') !== 0){
+                    tagArr.push(tags[i]);
+                }
+            }
+            tagArr.forEach(function(dItem){
+                dItem.innerText = parseInt(dItem.innerText) + 1;
+            });
+        }
     },
     submitIssue: function(cb){
         var formDom = document.querySelector('.ask-form textarea');
