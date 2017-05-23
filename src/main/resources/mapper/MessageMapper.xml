@@ -34,4 +34,12 @@
 		(#{id},0,now(),now(),#{content},#{isReplied},#{replyContent},#{replyNumber})
 	</insert>
 
+	<select id="findById" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM message
+		WHERE id = #{messageId}
+		AND status = 0
+	</select>
+
 </mapper>

@@ -1,6 +1,7 @@
 package org.bop.treehole.dao;
 
 
+import org.apache.ibatis.annotations.Param;
 import org.bop.treehole.domain.Message;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface MessageDao {
     List<Message> findAllMessage();
 
     Long saveMessage(Message message);
+
+    Message findById(@Param("messageId") Long messageId);
 }

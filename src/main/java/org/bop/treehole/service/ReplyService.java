@@ -22,4 +22,11 @@ public interface ReplyService {
      * @return
      */
     Long saveReply(MessageBean message);
+
+    /**
+     * 获取待回复列表
+     *
+     * @return
+     */
+    String findAllTemplateReply();
 }

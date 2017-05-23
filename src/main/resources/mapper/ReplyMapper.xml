@@ -24,4 +24,20 @@
 		(#{id},0,now(),now(),#{messageId},#{replyEmail})
 	</insert>
 
+	<select id="findToReplyMessageIds" resultType="long">
+		SELECT message_id
+		FROM reply
+		WHERE is_replied = 0
+		GROUP BY message_id
+		ORDER BY message_id DESC
+	</select>
+
+	<select id="findToReplyByMessageId" resultMap="BaseResultMap">
+		SELECT
+			<include refid="Base_Column_List" />
+		FROM reply
+		WHERE message_id = #{messageId}
+		AND is_replied = 0
+	</select>
+
 </mapper>

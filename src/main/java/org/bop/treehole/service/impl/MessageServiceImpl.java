@@ -42,4 +42,9 @@ public class MessageServiceImpl implements MessageService {
         replyService.saveReply(message);
         return messageDo.getId();
     }
+
+    @Override
+    public Message findById(Long messageId) {
+        return messageDao.findById(messageId);
+    }
 }

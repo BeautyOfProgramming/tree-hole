@@ -1,6 +1,7 @@
 package org.bop.treehole.controller;
 
 import org.bop.treehole.bean.MessageBean;
+import org.bop.treehole.domain.Message;
 import org.bop.treehole.domain.Reply;
 import org.bop.treehole.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,4 +27,12 @@ public class ReplyRestController {
         return replyService.saveReply(message);
     }
 
+    /**
+     * 获取待回复列表
+     *
+     */
+    @RequestMapping(value = "/reply/template/list", method = RequestMethod.GET)
+    public String findAllTemplateReply() {
+        return replyService.findAllTemplateReply();
+    }
 }
