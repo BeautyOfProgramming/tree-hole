@@ -2,9 +2,6 @@ package org.bop.treehole.bean;
 
 import lombok.Data;
 
-/**
- * Created by bysocket on 02/05/2017.
- */
 @Data
 public class MessageBean {
 

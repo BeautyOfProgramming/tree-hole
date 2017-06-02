@@ -1,4 +1,4 @@
-package org.bop.treehole.controller;
+package org.bop.treehole.web.rest;
 
 import org.bop.treehole.bean.MessageBean;
 import org.bop.treehole.service.ReplyService;
@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ReplyRestController {
+public class ReplyResource {
 
     private final ReplyService replyService;
 
     @Autowired
-    public ReplyRestController(ReplyService replyService) {
+    public ReplyResource(ReplyService replyService) {
         this.replyService = replyService;
     }
 
