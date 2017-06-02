@@ -15,7 +15,7 @@ html,body{
 }
 
 #cover .logo-large{
-    background: url('./image/logo-large.png') no-repeat;
+    background: url('image/logo-large.png') no-repeat;
     width: 21.33rem;
     height: 5.59rem;
     text-align: center;
@@ -98,7 +98,7 @@ html,body{
 }
 
 .title .logo{
-    background: url('./image/logo.png') no-repeat;
+    background: url('image/logo.png') no-repeat;
     width: 13rem;
     height: 1.75rem;
     margin-top: 1.25rem;
@@ -162,12 +162,12 @@ only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2) {
     #cover .logo-large{
-        background: url('./image/logo-large@2x.png') no-repeat;
+        background: url('image/logo-large@2x.png') no-repeat;
         background-size: 21.33rem auto;
     }
 
     .title .logo{
-        background: url('./image/logo@2x.png') no-repeat;
+        background: url('image/logo@2x.png') no-repeat;
         background-size: 13rem auto;
     }
 }

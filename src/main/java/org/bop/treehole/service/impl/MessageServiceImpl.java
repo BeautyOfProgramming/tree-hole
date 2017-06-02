@@ -18,11 +18,15 @@ import java.util.List;
 @Service
 public class MessageServiceImpl implements MessageService {
 
-    @Autowired
-    private MessageDao messageDao;
+    private final MessageDao messageDao;
+
+    private final ReplyService replyService;
 
     @Autowired
-    private ReplyService replyService;
+    public MessageServiceImpl(MessageDao messageDao, ReplyService replyService) {
+        this.messageDao = messageDao;
+        this.replyService = replyService;
+    }
 
     @Override
     public List<Message> findAllMessage() {

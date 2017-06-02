@@ -11,8 +11,12 @@ import java.util.List;
 @RestController
 public class MessageRestController {
 
+    private final MessageService messageService;
+
     @Autowired
-    private MessageService messageService;
+    public MessageRestController(MessageService messageService) {
+        this.messageService = messageService;
+    }
 
     /**
      * 获取留言列表

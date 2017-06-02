@@ -1,5 +1,7 @@
 package org.bop.treehole.domain;
 
+import lombok.Data;
+
 import java.util.Date;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Date;
  *
  * Created by bysocket on 02/05/2017.
  */
+@Data
 public class Reply {
 
     /**
@@ -32,52 +35,4 @@ public class Reply {
      * 回复邮箱
      */
     private String replyEmail;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public Long getMessageId() {
-        return messageId;
-    }
-
-    public void setMessageId(Long messageId) {
-        this.messageId = messageId;
-    }
-
-    public String getReplyEmail() {
-        return replyEmail;
-    }
-
-    public void setReplyEmail(String replyEmail) {
-        this.replyEmail = replyEmail;
-    }
 }
