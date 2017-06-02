@@ -1,4 +1,4 @@
-package org.bop.treehole.controller;
+package org.bop.treehole.web.rest;
 
 import org.bop.treehole.bean.MessageBean;
 import org.bop.treehole.domain.Message;
@@ -9,10 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class MessageRestController {
+public class MessageResource {
+
+    private final MessageService messageService;
 
     @Autowired
-    private MessageService messageService;
+    public MessageResource(MessageService messageService) {
+        this.messageService = messageService;
+    }
 
     /**
      * 获取留言列表

@@ -1,5 +1,7 @@
 package org.bop.treehole.domain;
 
+import lombok.Data;
+
 import java.util.Date;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Date;
  *
  * Created by bysocket on 02/05/2017.
  */
+@Data
 public class Message {
 
     /**
@@ -42,68 +45,4 @@ public class Message {
      * 回复次数
      */
     private Integer replyNumber;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public Integer getIsReplied() {
-        return isReplied;
-    }
-
-    public void setIsReplied(Integer isReplied) {
-        this.isReplied = isReplied;
-    }
-
-    public String getReplyContent() {
-        return replyContent;
-    }
-
-    public void setReplyContent(String replyContent) {
-        this.replyContent = replyContent;
-    }
-
-    public Integer getReplyNumber() {
-        return replyNumber;
-    }
-
-    public void setReplyNumber(Integer replyNumber) {
-        this.replyNumber = replyNumber;
-    }
 }

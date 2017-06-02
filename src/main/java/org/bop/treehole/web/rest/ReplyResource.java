@@ -1,8 +1,6 @@
-package org.bop.treehole.controller;
+package org.bop.treehole.web.rest;
 
 import org.bop.treehole.bean.MessageBean;
-import org.bop.treehole.domain.Message;
-import org.bop.treehole.domain.Reply;
 import org.bop.treehole.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,13 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-public class ReplyRestController {
+public class ReplyResource {
+
+    private final ReplyService replyService;
 
     @Autowired
-    private ReplyService replyService;
+    public ReplyResource(ReplyService replyService) {
+        this.replyService = replyService;
+    }
 
     /**
      * 新增回复

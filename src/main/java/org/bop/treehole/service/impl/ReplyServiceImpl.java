@@ -10,7 +10,6 @@ import org.bop.treehole.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -22,11 +21,15 @@ import java.util.List;
 @Service
 public class ReplyServiceImpl implements ReplyService {
 
-    @Autowired
-    private ReplyDao replyDao;
+    private final ReplyDao replyDao;
+
+    private final MessageService messageService;
 
     @Autowired
-    private MessageService messageService;
+    public ReplyServiceImpl(ReplyDao replyDao, MessageService messageService) {
+        this.replyDao = replyDao;
+        this.messageService = messageService;
+    }
 
     @Override
     public Long saveReply(MessageBean message) {
@@ -55,9 +58,7 @@ public class ReplyServiceImpl implements ReplyService {
             // 待回复邮箱列表
             StringBuilder emailList = new StringBuilder();
             List<Reply> replyList = replyDao.findToReplyByMessageId(messageId);
-            replyList.forEach(reply -> {
-                emailList.append("  " + reply.getReplyEmail());
-            });
+            replyList.forEach(reply -> emailList.append("  ").append(reply.getReplyEmail()));
             // 模板化
             String messageTemplate = String.format(TemplateReply.TEMPLATE,
                     String.valueOf(message.getId()),
