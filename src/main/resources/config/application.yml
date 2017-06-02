@@ -1,0 +1,22 @@
+## Configuration Template For Tree Hole
+server:
+  port: 8888
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+
+mybatis:
+  typeAliasesPackage: org.bop.treehole.domain
+  mapperLocations: classpath:mapper/*.xml
+  configuration:
+    use-generated-keys: true
+    defaultExecutorType: REUSE
+    cacheEnabled: false
+    vfsImpl: org.mybatis.spring.boot.autoconfigure.SpringBootVFS
+    lazyLoadingEnabled: true
+    defaultStatementTimeout: 5000
+    mapUnderscoreToCamelCase: true

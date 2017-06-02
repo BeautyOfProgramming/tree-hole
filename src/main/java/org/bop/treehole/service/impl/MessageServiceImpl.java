@@ -4,7 +4,6 @@ import org.bop.treehole.bean.MessageBean;
 import org.bop.treehole.dao.MessageDao;
 import org.bop.treehole.domain.Message;
 import org.bop.treehole.service.MessageService;
-import org.bop.treehole.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,12 +19,12 @@ public class MessageServiceImpl implements MessageService {
 
     private final MessageDao messageDao;
 
-    private final ReplyService replyService;
+//    private final ReplyService replyService;
 
     @Autowired
-    public MessageServiceImpl(MessageDao messageDao, ReplyService replyService) {
+    public MessageServiceImpl(MessageDao messageDao) {
         this.messageDao = messageDao;
-        this.replyService = replyService;
+//        this.replyService = replyService;
     }
 
     @Override
@@ -43,7 +42,8 @@ public class MessageServiceImpl implements MessageService {
 
         // 保存回复
         message.setId(messageDo.getId());
-        replyService.saveReply(message);
+        // TODO remove cycle injection
+//        replyService.saveReply(message);
         return messageDo.getId();
     }
 
