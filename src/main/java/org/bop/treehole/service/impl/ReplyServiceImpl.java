@@ -2,10 +2,10 @@ package org.bop.treehole.service.impl;
 
 import org.bop.treehole.bean.MessageBean;
 import org.bop.treehole.constant.TemplateReply;
+import org.bop.treehole.dao.MessageDao;
 import org.bop.treehole.dao.ReplyDao;
 import org.bop.treehole.domain.Message;
 import org.bop.treehole.domain.Reply;
-import org.bop.treehole.service.MessageService;
 import org.bop.treehole.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,12 +23,12 @@ public class ReplyServiceImpl implements ReplyService {
 
     private final ReplyDao replyDao;
 
-    private final MessageService messageService;
+    private final MessageDao messageDao;
 
     @Autowired
-    public ReplyServiceImpl(ReplyDao replyDao, MessageService messageService) {
+    public ReplyServiceImpl(ReplyDao replyDao, MessageDao messageDao) {
         this.replyDao = replyDao;
-        this.messageService = messageService;
+        this.messageDao = messageDao;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class ReplyServiceImpl implements ReplyService {
 
         // 循环获取留言回复列表
         messageIds.forEach( messageId -> {
-            Message message = messageService.findById(messageId);
+            Message message = messageDao.findById(messageId);
             // 待回复邮箱列表
             StringBuilder emailList = new StringBuilder();
             List<Reply> replyList = replyDao.findToReplyByMessageId(messageId);

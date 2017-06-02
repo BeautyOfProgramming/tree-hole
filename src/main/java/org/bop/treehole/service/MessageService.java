@@ -28,6 +28,4 @@ public interface MessageService {
      * @return
      */
     Long saveMessage(MessageBean message);
-
-    Message findById(Long messageId);
 }

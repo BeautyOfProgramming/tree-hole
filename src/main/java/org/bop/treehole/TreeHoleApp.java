@@ -73,6 +73,6 @@ public class TreeHoleApp {
             protocol,
             InetAddress.getLocalHost().getHostAddress(),
             env.getProperty("server.port"),
-            env.getActiveProfiles());
+            DefaultProfileUtil.getActiveProfiles(env));
     }
 }
