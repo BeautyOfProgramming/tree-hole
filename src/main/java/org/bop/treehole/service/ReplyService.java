@@ -1,11 +1,7 @@
 package org.bop.treehole.service;
 
 
-import org.bop.treehole.bean.MessageBean;
-import org.bop.treehole.domain.Message;
-import org.bop.treehole.domain.Reply;
-
-import java.util.List;
+import org.bop.treehole.web.dto.MessageBean;
 
 /**
  * 回复业务逻辑接口类

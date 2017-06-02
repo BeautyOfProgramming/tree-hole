@@ -20,3 +20,12 @@ mybatis:
     lazyLoadingEnabled: true
     defaultStatementTimeout: 5000
     mapUnderscoreToCamelCase: true
+
+tree:
+  filter:
+    dict-path: classpath:dicts.txt
+    enable-dict: true
+  http:
+    cache:
+      time-to-live-in-days: 30
+    version: v_2_0

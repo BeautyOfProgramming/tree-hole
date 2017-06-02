@@ -12,7 +12,6 @@ import java.util.List;
  *
  * Created by bysocket on 02/05/2017.
  */
-@Mapper
 public interface MessageDao {
 
     List<Message> findAllMessage();

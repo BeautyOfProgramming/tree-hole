@@ -1,6 +1,6 @@
 package org.bop.treehole.service.impl;
 
-import org.bop.treehole.bean.MessageBean;
+import org.bop.treehole.web.dto.MessageBean;
 import org.bop.treehole.constant.TemplateReply;
 import org.bop.treehole.dao.MessageDao;
 import org.bop.treehole.dao.ReplyDao;

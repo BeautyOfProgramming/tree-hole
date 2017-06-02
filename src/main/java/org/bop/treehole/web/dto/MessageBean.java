@@ -1,6 +1,7 @@
-package org.bop.treehole.bean;
+package org.bop.treehole.web.dto;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.Email;
 
 @Data
 public class MessageBean {
@@ -15,5 +16,6 @@ public class MessageBean {
     /**
      * 回复邮箱
      */
+    @Email
     private String replyEmail;
 }

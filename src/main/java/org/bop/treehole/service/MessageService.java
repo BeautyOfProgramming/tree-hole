@@ -1,7 +1,7 @@
 package org.bop.treehole.service;
 
 
-import org.bop.treehole.bean.MessageBean;
+import org.bop.treehole.web.dto.MessageBean;
 import org.bop.treehole.domain.Message;
 
 import java.util.List;

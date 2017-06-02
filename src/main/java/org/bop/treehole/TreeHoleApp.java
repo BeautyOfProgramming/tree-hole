@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bop.treehole.config.properties.TreeHoleProperties;
 import org.bop.treehole.support.DefaultProfileUtil;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfiguration;
 import org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration;
@@ -23,6 +24,7 @@ import static org.springframework.util.ObjectUtils.containsElement;
 @Slf4j
 @ComponentScan
 @AllArgsConstructor
+@MapperScan("org.bop.treehole.dao")
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
 @EnableConfigurationProperties({LiquibaseProperties.class, TreeHoleProperties.class})
 public class TreeHoleApp {

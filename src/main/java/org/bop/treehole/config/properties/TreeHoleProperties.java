@@ -15,6 +15,8 @@ public class TreeHoleProperties {
 
     private final Http http = new Http();
 
+    private final WordFilter filter = new WordFilter();
+
     @Data
     public static class Http {
 
@@ -32,5 +34,16 @@ public class TreeHoleProperties {
 
             private int timeToLiveInDays = 1461;
         }
+    }
+
+    @Data
+    public static class WordFilter {
+        private Boolean enableDict = false;
+
+        private Boolean enableAkismet = false;
+
+        private Boolean enableAliyun = false;
+
+        private String dictPath;
     }
 }

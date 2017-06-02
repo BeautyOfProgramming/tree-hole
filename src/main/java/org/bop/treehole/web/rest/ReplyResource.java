@@ -1,6 +1,6 @@
 package org.bop.treehole.web.rest;
 
-import org.bop.treehole.bean.MessageBean;
+import org.bop.treehole.web.dto.MessageBean;
 import org.bop.treehole.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
